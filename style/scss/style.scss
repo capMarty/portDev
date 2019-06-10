@@ -1,0 +1,254 @@
+
+html{
+	font-size: 18px;
+}
+body{
+	width: 100%;
+	line-height: 1.4;
+	font-family: 'Open Sans', sans-serif;
+	overflow-x: hidden;
+	color: #333;
+	background-color: #e7e7e7;
+	box-sizing: border-box;
+}
+ul, h1, h2, p{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style: none;
+}
+#wrapper{
+	height: 100%;
+	overflow-y:hidden;
+	position: relative;
+}
+.sidebar{
+	text-align: center;
+	width: 19%;
+	background-color: #fff;
+	padding-top:10%;
+	position: fixed;
+	height: 100%;
+	overflow: auto;
+	z-index: 10;
+	transition: .7s ease all;
+	color:#D3D0CB;
+}
+.sidebar-title_name{
+	font-size: 1.85rem;
+	color: #393E41;
+}
+.sidebar-title_txt{
+	font-size: 1.4rem;
+	color: #1E2019;
+}
+nav{
+	margin: 25% 0;
+}
+.sidebar-menu_list{
+	line-height: 4;
+	color: #1E2019;
+	.sidebar-menu_item{
+		background-color: #c9c7c3;
+		&:focus{
+			outline: none;
+			/*background-color:#393E41;
+			color:#E2C044;
+			border-right:4px solid #E2C044; 
+			text-shadow: 0 0 10px #E2C044;*/
+		}
+		&:hover{
+			background-color:#55595b;
+			color:#E2C044;
+			cursor:pointer;
+			border-right:4px solid #E2C044; 
+			text-shadow: 0 0 10px #E2C044; 
+		}
+	}
+	.activeMenu{
+		background-color:#393E41;
+		color:#E2C044;
+		border-right:4px solid #E2C044; 
+		text-shadow: 0 0 10px #E2C044;
+		transition:all .7s ease;
+	}
+}
+.social-icon_list{
+	.social-icon_item{
+		
+		display: inline;
+		padding-right: 5%;
+		font-size: 1.5rem;
+		a{
+			color: #1E2019;
+			&:focus{
+				outline:none;
+				color:#E2C044;
+			}
+			&:hover{
+				color:#E2C044;
+			}
+		}
+	}
+}
+
+
+.main-content{
+	width: 81%;
+	height: 100vh;
+	position: relative;
+	float: right;
+}
+.block-content{
+	overflow:auto ;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	padding-top: 5%
+}
+/* page order*/
+.portfolio{
+	background-color:#ECE2D0;
+	z-index: 10;
+}
+.about{
+	background-color:#F2F4FF;
+	z-index: 9;
+}
+.contact{
+	background-color:#ECE2D0;
+	z-index: 8;
+}
+
+
+
+
+.layout{
+	width: 90%;
+	/*background-color: red;*/
+	margin:0 auto;
+}
+.layout-title{
+	text-align: center;
+	position: relative;
+	&:before,
+	&:after{
+		content:"";
+		display: block;
+		width: 100%;
+		background-color:#393E41;
+		position: absolute;
+	}
+	&:before{
+		top: 63%;
+		left: 0;
+		height: .1em;
+	}
+	&:after{
+		left: 0;
+		top: 46%;
+		height: .3em;
+	}
+}
+.layout-title_txt{
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 2rem;
+	color: #393E41;
+	position: relative;
+	background-color:#ECE2D0 ;
+	z-index: 1;
+}
+/*---------------------------------кнопки для переключения*/
+.portfolio-menu_list{
+	margin-top: 2%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	.portfolio-menu_item{
+		padding: .4%;
+		text-transform: uppercase;
+		border: 2px solid #ece2d0;
+		cursor: pointer;
+		&:first-child{
+			margin-left: 21%;
+		}
+		&:last-child{
+			margin-right: 21%;
+		}
+		&:hover{
+			border: 2px solid #587B7F;
+			border-radius: 5px;
+			background-color: #D3D0CB;
+			color:#587B7F;
+		}
+		&:focus{
+			outline:none;
+			border: 2px solid #587B7F;
+			border-radius: 5px;
+			background-color: #D3D0CB;
+			color:#587B7F;
+		}
+	}
+	.activeBtn{
+		border: 2px solid #587B7F;
+		border-radius: 5px;
+		background-color: #D3D0CB;
+		color:#587B7F;
+	}
+}
+
+/*------------------------------сами работы*/
+.portfolio-project-grid{
+	margin: 5% auto 0;
+	display:grid;
+	grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+
+}
+.portfolio-project_item{
+	width:100%;
+	height: 100%;
+	&:focus{
+		outline:none;
+	}
+}
+.img-cl{
+	width:100%;
+	height: 100%;
+	background-color: #fff;
+}
+.flip{
+	perspective: 800px;
+	margin: 0;
+}
+.card{
+	position: relative;
+	width: 100%;
+	height: 250px;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+}
+.card:hover {
+	transform: rotateY(180deg); 
+}
+.card-face{
+	position: absolute;
+	top:0;
+	bottom: 0;
+	backface-visibility: hidden;
+}
+.card-face.back{
+	color: red;
+	background: #4B846A;
+	transform: rotateY(180deg);
+	width: 100%;
+	height: 100%;
+}
+
+/*------------------------------------сами работы*/
+
+.bg_text{
+	background-color: #F2F4FF;
+}
